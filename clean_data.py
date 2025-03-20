@@ -20,6 +20,7 @@ if __name__ == "__main__":
     df['price'] = df['price'].apply(extract_price)
     df['original_price'] = df['original_price'].apply(extract_price)
     
+    df["price"] = df["price"].fillna(df["price"].median(skipna=True))
     df["original_price"] = df["original_price"].fillna(df["price"])
     
     df["shipping"] = df["shipping"].fillna("Shipping info unavailable")
