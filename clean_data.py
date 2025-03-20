@@ -1,6 +1,5 @@
 import pandas as pd
 import re
-import numpy as np
 
 if __name__ == "__main__":
     df = pd.read_csv("ebay_tech_deals.csv")
