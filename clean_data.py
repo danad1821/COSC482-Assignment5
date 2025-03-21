@@ -1,5 +1,6 @@
 import pandas as pd
 import re
+import numpy as np
 
 if __name__ == "__main__":
     df = pd.read_csv("ebay_tech_deals.csv")
@@ -27,7 +28,9 @@ if __name__ == "__main__":
     
     df["price"] = pd.to_numeric(df['price'], errors="coerce")
     df["original_price"] = pd.to_numeric(df['original_price'], errors="coerce")
+    df['original_price'] = np.where(df['original_price'] < df['price'], df['price'], df['original_price'])
     df["discount_percentage"] = ((1 - (df["price"]/df["original_price"]))*100).round(2)
+    
     
     df.to_csv("cleaned_ebay_deals.csv")
     
