@@ -24,11 +24,13 @@
   - ### Text Analysis on Product Titles: ###
     Given the set of keywords "Laptop", "Phone", "Tablet", "Apple", "Samsung", "Xbox", the most frequent keywords were "Apple" and "Phone". On the other hand, the least frequent were "Tablet" and "Xbox". 
   - ### Price difference analysis: ###
-    A lot of deals have a difference of 0 but some a difference wothe most frequent difference being around 200 dollars.
+    A lot of deals have a difference of 0 but for the ones that don't the most frequent difference being around 200 dollars.
   - ### Discount: ###
     The top 5 seem to be the same deal just scraped at different times with a discount of 87.25%.
 
 ## Challenges
+* Some data related to the discount was ending up negative which made no sense, so I added something to the cleaning to fix that.
 
 ## Improvements
-  
+* Ensuring that there are no duplicated deals after scraping
+* Updating the information on any deals.
