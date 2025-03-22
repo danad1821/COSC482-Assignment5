@@ -6,7 +6,7 @@ if __name__ == "__main__":
     df = pd.read_csv("ebay_tech_deals.csv")
     
     def extract_price(price_string):
-        if isinstance(price_string, str):  # Check if the value is a string
+        if isinstance(price_string, str):  
             match = re.search(r"[\d.]+", price_string)
             if match:
                 try:
@@ -16,7 +16,7 @@ if __name__ == "__main__":
             else:
                 return None
         else:
-            return None  # Return None for non-string values
+            return None
 
     df['price'] = df['price'].apply(extract_price)
     df['original_price'] = df['original_price'].apply(extract_price)
